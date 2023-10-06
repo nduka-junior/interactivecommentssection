@@ -1,0 +1,172 @@
+{
+  "currentUser": {
+    "image": {
+      "png": "https://i.pravatar.cc/150?img=1",
+      "webp": "https://i.pravatar.cc/150?img=1"
+    },
+    "username": "juliusomo"
+  },
+  "comments": [
+    {
+      "id": 1,
+      "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
+      "createdAt": "1 month ago",
+      "score": 12,
+      "user": {
+        "image": {
+          "png": "https://i.pravatar.cc/150?img=2",
+          "webp": "https://i.pravatar.cc/150?img=2"
+        },
+        "username": "amyrobson"
+      },
+      "replies": [
+        {
+          "id": 5,
+          "content": "Thanks for your feedback, Amy! We're constantly working on improvements, and your input is valuable.",
+          "createdAt": "3 weeks ago",
+          "score": 7,
+          "replyingTo": "amyrobson",
+          "user": {
+            "image": {
+              "png": "https://i.pravatar.cc/150?img=3",
+              "webp": "https://i.pravatar.cc/150?img=3"
+            },
+            "username": "johnsmith"
+          },
+          "replies": [
+            {
+              "id": 6,
+              "content": "Is on platforms like Udemy and Coursera.",
+              "createdAt": "2 weeks ago",
+              "score": 8,
+              "replyingTo": "johnsmith",
+              "user": {
+                "image": {
+                  "png": "https://i.pravatar.cc/150?img=4",
+                  "webp": "https://i.pravatar.cc/150?img=4"
+                },
+                "username": "janesmith"
+              }
+            },
+            {
+              "id": 7,
+              "content": "I've been coding for about 5 years now. Learning React is a great choice! You can start with online tutorials and documentation. There are also some excellent React courses on platforms like Udemy and Coursera.",
+              "createdAt": "2 weeks ago",
+              "score": 8,
+              "replyingTo": "johnsmith",
+              "user": {
+                "image": {
+                  "png": "https://i.pravatar.cc/150?img=5",
+                  "webp": "https://i.pravatar.cc/150?img=5"
+                },
+                "username": "robertjohnson"
+              },
+              "replies": [
+                {
+                  "id": 8,
+                  "content": "I've emy and Coursera.",
+                  "createdAt": "2 weeks ago",
+                  "score": 8,
+                  "replyingTo": "johnsmith",
+                  "user": {
+                    "image": {
+                      "png": "https://i.pravatar.cc/150?img=6",
+                      "webp": "https://i.pravatar.cc/150?img=6"
+                    },
+                    "username": "janesmith"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "content": "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
+      "createdAt": "2 weeks ago",
+      "score": 15,
+      "user": {
+        "image": {
+          "png": "https://i.pravatar.cc/150?img=7",
+          "webp": "https://i.pravatar.cc/150?img=7"
+        },
+        "username": "alicejohnson"
+      },
+      "replies": [
+        {
+          "id": 6,
+          "content": "I've been coding for about 5 years now. Learning React is a great choice! You can start with online tutorials and documentation. There are also some excellent React courses on platforms like Udemy and Coursera.",
+          "createdAt": "2 weeks ago",
+          "score": 8,
+          "replyingTo": "alicejohnson",
+          "user": {
+            "image": {
+              "png": "https://i.pravatar.cc/150?img=8",
+              "webp": "https://i.pravatar.cc/150?img=8"
+            },
+            "username": "robertjohnson"
+          }
+        },
+        {
+          "id": 7,
+          "content": "Thank you for the advice! I'll check out those resources and get started on my React journey.",
+          "createdAt": "2 weeks ago",
+          "score": 4,
+          "replyingTo": "robertjohnson",
+          "user": {
+            "image": {
+              "png": "https://i.pravatar.cc/150?img=9",
+              "webp": "https://i.pravatar.cc/150?img=9"
+            },
+            "username": "eveanderson"
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "content": "Hey there, I'm also new to coding and interested in React. Any recommendations on how to get started?",
+      "createdAt": "2 weeks ago",
+      "score": 6,
+      "user": {
+        "image": {
+          "png": "https://i.pravatar.cc/150?img=10",
+          "webp": "https://i.pravatar.cc/150?img=10"
+        },
+        "username": "carolwilson"
+      },
+      "replies": [
+        {
+          "id": 9,
+          "content": "Welcome to the coding world, Carol! Learning React is a great choice. You can start by exploring the official React documentation. There are also many online tutorials and courses on platforms like Udemy and Coursera.",
+          "createdAt": "2 weeks ago",
+          "score": 7,
+          "replyingTo": "carolwilson",
+          "user": {
+            "image": {
+              "png": "https://i.pravatar.cc/150?img=11",
+              "webp": "https://i.pravatar.cc/150?img=11"
+            },
+            "username": "davidbrown"
+          }
+        },
+        {
+          "id": 10,
+          "content": "Thank you, David! I'll start with the documentation and look into those online resources.",
+          "createdAt": "2 weeks ago",
+          "score": 4,
+          "replyingTo": "davidbrown",
+          "user": {
+            "image": {
+              "png": "https://i.pravatar.cc/150?img=12",
+              "webp": "https://i.pravatar.cc/150?img=12"
+            },
+            "username": "carolwilson"
+          }
+        }
+      ]
+    }
+  ]
+}

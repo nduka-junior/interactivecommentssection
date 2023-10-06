@@ -1,91 +1,65 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import React from "react";
+import ReplyCard from "../components/ReplyCard";
+import data from "@/lib/data.json";
+import MessageCard from "@/components/MessageCard";
 
-const inter = Inter({ subsets: ['latin'] })
+export interface CommentType {
+  id: number;
+  content: string;
+  createdAt: string;
+  score: number;
+  user: {
+    image: {
+      png: string;
+      webp: string;
+    };
+    username: string;
+  };
+  replies: CommentType[];
+}
+
+function processReplies(replies: CommentType[]): React.ReactNode {
+  return (
+    <>
+      {replies.map((reply) => (
+        <div
+          key={reply.id}
+          className="w-full flex flex-col justify-end items-end relative "
+        >
+          <div className="border-l-[2px] h-full absolute left-[2vw]  max-lg:left-[1vw]"></div>
+
+          <div className="w-[90%] max-lg:w-[95%] ">
+            <ReplyCard comment={reply} />
+          </div>
+          {reply.replies && reply.replies.length > 0 && (
+            <div className="w-[90%] max-lg:w-[95%]">
+              {processReplies(reply.replies)}
+            </div>
+          )}
+        </div>
+      ))}
+    </>
+  );
+}
 
 export default function Home() {
+  const parse = JSON.stringify(data);
+  const parseData = JSON.parse(parse);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <div className="bg-very-light-gray pb-[10px] min-h-screen px-[4vw] pt-[4vh] lg:mx-[14vw]">
+      <div className="overflow-y-auto h-[74vh]">
+        {parseData.comments.map((comment: CommentType) => (
+          <div key={comment.id}>
+            <ReplyCard comment={comment} />
+
+            {comment.replies && comment.replies.length > 0 && (
+              <div className="w-[90%]">{processReplies(comment.replies)}</div>
+            )}
+          </div>
+        ))}
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <MessageCard />
+    </div>
+  );
 }
