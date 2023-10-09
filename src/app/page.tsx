@@ -1,7 +1,8 @@
-import React from "react";
+import React, { use } from "react";
 import ReplyCard from "../components/ReplyCard";
 import data from "@/lib/data.json";
-import MessageCard from "@/components/MessageCard";
+import MessageAuth from "@/components/MessageAuth";
+
 
 export interface CommentType {
   id: number;
@@ -59,7 +60,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-      <MessageCard />
+      <MessageAuth />
     </div>
   );
 }
